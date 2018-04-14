@@ -34,6 +34,27 @@ under the License.
   <packaging>pom</packaging>
 
   <name>Apache Maven</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-remote-resources-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>      
+    </build>
   <description>Maven is a software build management and
     comprehension tool. Based on the concept of a project object model:
     builds, dependency management, documentation creation, site
